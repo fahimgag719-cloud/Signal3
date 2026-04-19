@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>𓆩×͜×𓆪𝐅&Μ 𝐅𝐀𝐇𝐈Μ HACK</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossoygin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #predictionBox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(10, 10, 25, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 15px 18px;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            width: 190px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4), 
+                        0 0 20px rgba(0, 255, 255, 0.2), 
+                        inset 0 0 10px rgba(0, 255, 255, 0.05);
+            z-index: 99999;
+            cursor: grab;
+            user-select: none;
+            transition: all 0.5s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        #vipTitle {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #ffffff;
+            text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff;
+            letter-spacing: 1px;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        #bsText {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.8s ease, text-shadow 0.8s ease, filter 0.8s ease;
+            filter: drop-shadow(0 0 10px currentColor);
+            animation: flicker 3s infinite alternate;
+            margin-bottom: 8px;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.8; }
+        }
+
+        .bd-time, .timer { 
+            font-size: 12px;
+            color: #00ffff;
+            opacity: 0.9; 
+            font-weight: 700;
+            text-shadow: 0 0 4px #00ffff;
+        }
+
+        #loginForm input {
+            width: 90%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            margin-bottom: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            box-sizing: border-box;
+        }
+
+        #loginForm button {
+            width: 90%;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(45deg, #00ffff, #0080ff);
+            color: #0a0a0a;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 25, 0.9);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            display: none;
+            z-index: 100000;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 25, 0.9);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .loading-spinner {
+            width: 35px;
+            height: 35px;
+            border: 3px solid rgba(0, 255, 255, 0.2);
+            border-top: 3px solid #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <iframe src="https://240bdwin24.com/register?inviteCode=9K7NYQN&from=web"></iframe>
+
+    <div id="predictionBox">
+        <div id="loginForm">
+            <input id="passwordInput" placeholder="Enter Password" type="password">
+            <br>
+            <button id="loginBtn">Login</button>
+        </div>
+
+        <div id="predictionUI" style="display:none;">
+            <div id="vipTitle">𓆩×͜×𓆪𝐅&Μ 𝐅𝐀𝐇𝐈Μ</div>
+            <div id="bsText">BIG</div>
+            <div class="bd-time" id="bdTime">--:--:--</div>
+            <div class="timer" id="timer">Next: 00:00</div>
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        let currentPrediction = "BIG";
+        let currentColor = { color: '#00ffff', shadow: '0 0 20px #00ffff' };
+        let timerInterval;
+        let lastSecond = -1;
+
+        const bigColors = [
+            { color: '#00ffff', shadow: '0 0 20px #00ffff' },
+            { color: '#39ff14', shadow: '0 0 20px #39ff14' }
+        ];
+
+        const smallColors = [
+            { color: '#ff00ff', shadow: '0 0 20px #ff00ff' },
+            { color: '#ff4500', shadow: '0 0 20px #ff4500' }
+        ];
+
+        function generatePrediction() {
+            const isBig = Math.random() < 0.5;
+            const prediction = isBig ? "BIG" : "SMALL";
+            const palette = isBig ? bigColors : smallColors;
+            const color = palette[Math.floor(Math.random() * palette.length)];
+            return { prediction, color };
+        }
+
+        function getBDTime() {
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const bdTime = new Date(utc + (6 * 3600000));
+            return bdTime.toTimeString().split(' ')[0];
+        }
+
+        function updateUI() {
+            const bsElement = document.getElementById("bsText");
+            bsElement.innerText = currentPrediction;
+            bsElement.style.color = currentColor.color;
+            bsElement.style.textShadow = currentColor.shadow;
+        }
+
+        function showLoadingAnimation(show) {
+            document.getElementById("loadingOverlay").style.display = show ? "flex" : "none";
+        }
+
+        function updateTimer() {
+            document.getElementById("bdTime").innerText = getBDTime();
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const remainingSeconds = 30 - (seconds % 30);
+            document.getElementById("timer").innerText = `Next: 00:${String(remainingSeconds).padStart(2,'0')}`;
+
+            if (seconds % 30 === 0 && seconds !== lastSecond) {
+                lastSecond = seconds;
+                showLoadingAnimation(true);
+                const { prediction, color } = generatePrediction();
+                currentPrediction = prediction;
+                currentColor = color;
+                updateUI();
+                setTimeout(() => showLoadingAnimation(false), 800);
+            }
+        }
+
+        function showToast(message, type) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.style.display = "block";
+            setTimeout(() => toast.style.display = "none", 3000);
+        }
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            if(document.getElementById("passwordInput").value === "FMS69"){
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("predictionUI").style.display = "block";
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            } else {
+                showToast("Invalid Password!", "error");
+            }
+        });
+
+        // Draggable Logic
+        const box = document.getElementById("predictionBox");
+        let isDragging = false;
+        box.onmousedown = (e) => { isDragging = true; };
+        document.onmousemove = (e) => {
+            if (isDragging) {
+                box.style.left = e.clientX - 100 + "px";
+                box.style.top = e.clientY - 50 + "px";
+            }
+        };
+        document.onmouseup = () => { isDragging = false; };
+    </script>
+</body>
+</html>
+
