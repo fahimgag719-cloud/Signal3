@@ -180,7 +180,6 @@
     <script>
         let currentPrediction = "BIG";
         let currentColor = { color: '#00ffff', shadow: '0 0 20px #00ffff' };
-        let timerInterval;
         let lastSecond = -1;
 
         const bigColors = [
@@ -229,15 +228,17 @@
             if (seconds % 30 === 0 && seconds !== lastSecond) {
                 lastSecond = seconds;
                 showLoadingAnimation(true);
+
                 const { prediction, color } = generatePrediction();
                 currentPrediction = prediction;
                 currentColor = color;
                 updateUI();
+
                 setTimeout(() => showLoadingAnimation(false), 800);
             }
         }
 
-        function showToast(message, type) {
+        function showToast(message) {
             const toast = document.getElementById("toast");
             toast.innerText = message;
             toast.style.display = "block";
@@ -251,22 +252,57 @@
                 updateTimer();
                 setInterval(updateTimer, 1000);
             } else {
-                showToast("Invalid Password!", "error");
+                showToast("Invalid Password!");
             }
         });
 
-        // Draggable Logic
+        /* DRAG SYSTEM ON */
         const box = document.getElementById("predictionBox");
+
         let isDragging = false;
-        box.onmousedown = (e) => { isDragging = true; };
-        document.onmousemove = (e) => {
-            if (isDragging) {
-                box.style.left = e.clientX - 100 + "px";
-                box.style.top = e.clientY - 50 + "px";
-            }
-        };
-        document.onmouseup = () => { isDragging = false; };
+        let offsetX = 0;
+        let offsetY = 0;
+
+        box.addEventListener("mousedown", (e) => {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "BUTTON") return;
+            isDragging = true;
+            offsetX = e.clientX - box.offsetLeft;
+            offsetY = e.clientY - box.offsetTop;
+            box.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            box.style.left = (e.clientX - offsetX) + "px";
+            box.style.top = (e.clientY - offsetY) + "px";
+            box.style.right = "auto";
+            box.style.bottom = "auto";
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            box.style.cursor = "grab";
+        });
+
+        /* MOBILE TOUCH DRAG */
+        box.addEventListener("touchstart", (e) => {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "BUTTON") return;
+            isDragging = true;
+            offsetX = e.touches[0].clientX - box.offsetLeft;
+            offsetY = e.touches[0].clientY - box.offsetTop;
+        });
+
+        document.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            box.style.left = (e.touches[0].clientX - offsetX) + "px";
+            box.style.top = (e.touches[0].clientY - offsetY) + "px";
+            box.style.right = "auto";
+            box.style.bottom = "auto";
+        });
+
+        document.addEventListener("touchend", () => {
+            isDragging = false;
+        });
     </script>
 </body>
 </html>
-
